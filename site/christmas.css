@@ -1,0 +1,65 @@
+/* Christmas decoration: pure CSS, no images to download.
+   Remove the <link> to this file in index.html to go back to the plain look. */
+
+/* Keep content above the decorations */
+header, main { position: relative; z-index: 2; }
+dialog { z-index: 5; }
+
+/* Falling snow: two sizes of flakes drifting at different speeds */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,.85), transparent),
+    radial-gradient(2px 2px at 110px 90px, rgba(255,255,255,.7), transparent),
+    radial-gradient(3px 3px at 160px 150px, rgba(255,255,255,.9), transparent),
+    radial-gradient(3px 3px at 40px 60px, rgba(255,255,255,.8), transparent),
+    radial-gradient(2px 2px at 190px 200px, rgba(255,255,255,.7), transparent),
+    radial-gradient(4px 4px at 120px 260px, rgba(255,255,255,.9), transparent);
+  background-size: 200px 200px, 200px 200px, 200px 200px, 300px 300px, 300px 300px, 300px 300px;
+  animation: snowfall 16s linear infinite;
+}
+@keyframes snowfall {
+  from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+  to   { background-position: 20px 200px, -30px 200px, 10px 200px, 40px 300px, -20px 300px, 30px 300px; }
+}
+
+/* Pine trees along the bottom edge */
+body::after {
+  content: "";
+  position: fixed; left: 0; right: 0; bottom: 0; height: 110px; z-index: 1; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='110' viewBox='0 0 260 110'%3E%3Cg fill='%230f3d2e'%3E%3Cpolygon points='50,10 82,60 66,60 92,95 8,95 34,60 18,60'/%3E%3Crect x='44' y='95' width='12' height='15'/%3E%3C/g%3E%3Cg fill='%2314513b'%3E%3Cpolygon points='170,30 196,66 183,66 204,98 136,98 157,66 144,66'/%3E%3Crect x='165' y='98' width='10' height='12'/%3E%3C/g%3E%3Cg fill='%23e6b84a'%3E%3Cpolygon points='50,2 53,9 60,9 54,13 56,20 50,16 44,20 46,13 40,9 47,9'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  opacity: .75;
+}
+
+/* Garland: a string of coloured lights across the top */
+html::before {
+  content: "";
+  position: fixed; top: 0; left: 0; right: 0; height: 16px; z-index: 6; pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 8px, #d9394b 0 4px, transparent 5px) 0 0 / 60px 16px repeat-x,
+    radial-gradient(circle at 50% 8px, #e6b84a 0 4px, transparent 5px) 15px 0 / 60px 16px repeat-x,
+    radial-gradient(circle at 50% 8px, #3fae7a 0 4px, transparent 5px) 30px 0 / 60px 16px repeat-x,
+    radial-gradient(circle at 50% 8px, #4f8fe0 0 4px, transparent 5px) 45px 0 / 60px 16px repeat-x,
+    linear-gradient(#0c0f16 0 2px, transparent 2px);
+  animation: twinkle 2.4s ease-in-out infinite alternate;
+}
+@keyframes twinkle { from { opacity: .65; } to { opacity: 1; } }
+
+/* A star above the title */
+h1::before {
+  content: "\2605";
+  display: block;
+  font-size: .5em; line-height: 1; margin-bottom: .25em;
+  color: #e6b84a;
+  text-shadow: 0 0 14px rgba(230,184,74,.8);
+}
+
+/* Soft glow on the open boxes */
+#grid button:not(:disabled) { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 6px 18px rgba(179,32,47,.35); }
+
+@media (prefers-reduced-motion: reduce) {
+  body::before, html::before { animation: none; }
+}
