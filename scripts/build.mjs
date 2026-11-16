@@ -38,7 +38,7 @@ if (process.env.CONTENT_JSON) raw = process.env.CONTENT_JSON;
 else if (existsSync("content/private.json")) raw = readFileSync("content/private.json", "utf8");
 else raw = readFileSync("content/example.json", "utf8");
 
-const content = JSON.parse(raw);
+const content = JSON.parse(raw.replace(/^\uFEFF/, "").trim());
 if (!Array.isArray(content.days) || content.days.length !== 24) {
   throw new Error(`Expected 24 days, got ${content.days?.length}`);
 }
@@ -57,3 +57,4 @@ writeFileSync(
   JSON.stringify({ title: content.title, subtitle: content.subtitle, open })
 );
 console.log(`Paris date ${parts.year}-${parts.month}-${parts.day}: ${open} box(es) open (mode: ${config.mode})`);
+
