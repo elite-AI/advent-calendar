@@ -1,0 +1,8 @@
+{
+  "year": 2026,
+  "mode": "normal",
+  "accelerated": {
+    "start": "2026-11-16T19:00:00Z",
+    "minutes_per_box": 5
+  }
+}

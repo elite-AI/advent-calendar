@@ -1,0 +1,54 @@
+:root {
+  --bg: #12161f;
+  --card: #1c2230;
+  --open: #b3202f;
+  --open-hover: #d12a3c;
+  --locked: #232a3a;
+  --text: #f4efe6;
+  --muted: #9aa3b5;
+  --gold: #e6b84a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1d2538, var(--bg) 60%);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  min-height: 100vh;
+}
+header { text-align: center; padding: 2.5rem 1rem 1rem; }
+h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 3rem); color: var(--gold); letter-spacing: .02em; }
+#subtitle { color: var(--muted); max-width: 36rem; margin: .75rem auto 0; }
+main { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+#grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: .75rem;
+  grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+}
+#grid button {
+  width: 100%; aspect-ratio: 1; border: 2px solid transparent; border-radius: .75rem;
+  font: inherit; font-size: 1.6rem; font-weight: bold; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .15rem;
+  color: var(--text); background: var(--open);
+  transition: transform .12s, background .12s;
+}
+#grid button:hover:not(:disabled) { background: var(--open-hover); transform: translateY(-2px); }
+#grid button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+#grid button:disabled {
+  background: var(--locked); color: var(--muted); cursor: not-allowed;
+  border-style: dashed; border-color: #34405a;
+}
+#grid .state { font-size: .65rem; font-weight: normal; letter-spacing: .08em; text-transform: uppercase; }
+dialog {
+  border: 2px solid var(--gold); border-radius: 1rem; padding: 0;
+  background: var(--card); color: var(--text); max-width: 28rem; width: calc(100% - 2rem);
+}
+dialog::backdrop { background: rgba(0, 0, 0, .65); }
+dialog article { padding: 1.75rem; }
+.day { color: var(--gold); margin: 0; text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; }
+dialog h2 { margin: .4rem 0 .8rem; }
+#box-text { line-height: 1.55; }
+#close {
+  margin-top: 1rem; padding: .55rem 1.2rem; font: inherit; cursor: pointer;
+  border: 0; border-radius: .5rem; background: var(--gold); color: #1a1a1a; font-weight: bold;
+}

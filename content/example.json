@@ -1,0 +1,30 @@
+{
+  "title": "24 Films Before Christmas",
+  "subtitle": "A film a day, from December 1st. Boxes open by themselves at midnight, Paris time.",
+  "days": [
+    { "day": 1, "title": "Example box 1", "text": "Placeholder used when no private content is available." },
+    { "day": 2, "title": "Example box 2", "text": "Placeholder." },
+    { "day": 3, "title": "Example box 3", "text": "Placeholder." },
+    { "day": 4, "title": "Example box 4", "text": "Placeholder." },
+    { "day": 5, "title": "Example box 5", "text": "Placeholder." },
+    { "day": 6, "title": "Example box 6", "text": "Placeholder." },
+    { "day": 7, "title": "Example box 7", "text": "Placeholder." },
+    { "day": 8, "title": "Example box 8", "text": "Placeholder." },
+    { "day": 9, "title": "Example box 9", "text": "Placeholder." },
+    { "day": 10, "title": "Example box 10", "text": "Placeholder." },
+    { "day": 11, "title": "Example box 11", "text": "Placeholder." },
+    { "day": 12, "title": "Example box 12", "text": "Placeholder." },
+    { "day": 13, "title": "Example box 13", "text": "Placeholder." },
+    { "day": 14, "title": "Example box 14", "text": "Placeholder." },
+    { "day": 15, "title": "Example box 15", "text": "Placeholder." },
+    { "day": 16, "title": "Example box 16", "text": "Placeholder." },
+    { "day": 17, "title": "Example box 17", "text": "Placeholder." },
+    { "day": 18, "title": "Example box 18", "text": "Placeholder." },
+    { "day": 19, "title": "Example box 19", "text": "Placeholder." },
+    { "day": 20, "title": "Example box 20", "text": "Placeholder." },
+    { "day": 21, "title": "Example box 21", "text": "Placeholder." },
+    { "day": 22, "title": "Example box 22", "text": "Placeholder." },
+    { "day": 23, "title": "Example box 23", "text": "Placeholder." },
+    { "day": 24, "title": "Example box 24", "text": "Placeholder." }
+  ]
+}
